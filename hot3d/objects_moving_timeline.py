@@ -1,18 +1,20 @@
 import os
-from dataset_api import Hot3dDataProvider
-from data_loaders.loader_object_library import load_object_library
-from data_loaders.mano_layer import MANOHandModel
-from projectaria_tools.core.sensor_data import TimeDomain, TimeQueryOptions
-from projectaria_tools.core.sophus import SE3
-from projectaria_tools.utils.rerun_helpers import ToTransform3D
-from tqdm import tqdm
+import time
 import numpy as np
+import rerun as rr
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
-import rerun as rr
-from data_loaders.loader_object_library import ObjectLibrary
+from tqdm import tqdm
+
+from dataset_api import Hot3dDataProvider
+from data_loaders.mano_layer import MANOHandModel
 from data_loaders.hand_common import LANDMARK_CONNECTIVITY
-import time
+from data_loaders.loader_object_library import ObjectLibrary
+from data_loaders.loader_object_library import load_object_library
+
+from projectaria_tools.core.sophus import SE3
+from projectaria_tools.utils.rerun_helpers import ToTransform3D
+from projectaria_tools.core.sensor_data import TimeDomain, TimeQueryOptions
 
 def plot_movement_timeline(objects_moving, object_library):
     global_start_time = min(min(data["timestamps"]) for data in objects_moving.values())
