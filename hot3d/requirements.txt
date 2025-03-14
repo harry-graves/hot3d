@@ -111,6 +111,7 @@ rclpy==3.3.15
 rcutils==5.1.6
 requests==2.32.3
 rerun-sdk==0.22.1
+requests==2.32.3
 resource-retriever==3.1.2
 rmw-dds-common==1.6.0
 ros2action==0.18.11
