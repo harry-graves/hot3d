@@ -2,3 +2,7 @@
 .pixi
 # dataset download instruction
 /dataset/**
+# pycache
+**__pycache__
+# venv
+**venv
